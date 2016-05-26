@@ -1,0 +1,3 @@
+[submodule "fiware-cygnus"]
+	path = fiware-cygnus
+	url = https://github.com/GeographicaGS/fiware-cygnus.git
