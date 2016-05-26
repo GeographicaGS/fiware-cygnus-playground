@@ -3,9 +3,15 @@ orion:
   links:
     - mongo
     - cygnus
+    - accumulator
   ports:
     - "1026:1026"
   command: -dbhost mongo
+accumulator:
+  build: accumulator
+  ports:
+    - "1028:1028"
+  command: ./accumulator-server.py
 mongo:
   image: mongo:3.2
   command: --smallfiles --nojournal
