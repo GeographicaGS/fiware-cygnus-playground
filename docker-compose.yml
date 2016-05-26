@@ -1,0 +1,18 @@
+orion:
+  image: fiware/orion
+  links:
+    - mongo
+    - cygnus
+  ports:
+    - "1026:1026"
+  command: -dbhost mongo
+mongo:
+  image: mongo:3.2
+  command: --smallfiles --nojournal
+  ports:
+    - "27018:27017" # port opened only for development environment
+cygnus:
+  build: fiware-cygnus/docker/cygnus-ngsi
+  ports:
+    - "8081:8081"
+    - "5050:5050"
